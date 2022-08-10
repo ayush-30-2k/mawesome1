@@ -9,6 +9,7 @@ export default function App() {
     const [input, setInput] = React.useState('');
     const [errMes, setErr] = React.useState('');
     const [shake, setShake] = React.useState(false);
+    const [dark, setDarkmode] = React.useState(true);
 
 
 
@@ -108,7 +109,6 @@ export default function App() {
         )
     }
 
-    const date = new Date();
 
     let icon;
 
@@ -142,50 +142,64 @@ export default function App() {
             break;
     }
 
+    function darkMode() {
+        setDarkmode(prev => prev = !prev);
+        console.log(dark);
+    }
+
+
+
+    const style = {
+        background: !dark ? "linear-gradient(rgb(23, 1, 87), rgba(106, 12, 91))" : ""
+    }
+
     return (
         <>
-            <div className="all">
-                {errMes && <div className="err shake">{`${errMes.response.data.message}`}</div>}
-                <div className={shake ? "mid shake" : "mid"}>
-                    <form>
-                        <input type="text" className="input" onChange={(e) => { handleClick(e) }} placeholder="Search City or Country" />
-                        <button onClick={(e) => { handleSubmit(e) }}>
-                            <img src="https://img.icons8.com/avantgarde/344/experimental-search-avantgarde.png" />
-                        </button>
-                    </form>
-                </div>
-                <div className="card">
-                    <div className="icon-arrange">
-                        <div className={`${ic !== 'Clear' ? "temperature" : ""}`}><img src={icon} /></div>
-                        <div className="icon--number">
-                            <div className="city">
-                                <h3>{data.name}, {data.sys.country}</h3>
-                                <h6 className="date">{dateBuilder(new Date())}</h6>
+            <div className="every" style={style}>
+                <button onClick={darkMode}><div className={dark ? "darkMode dark" : "darkMode white"}></div></button>
+                <div className="all">
+                    {errMes && <div className="err shake">{`${errMes.response.data.message}`}</div>}
+                    <div className={shake ? "mid shake" : "mid"}>
+                        <form>
+                            <input type="text" className={dark ? "" : "cardDark"} onChange={(e) => { handleClick(e) }} placeholder="Search City or Country" />
+                            <button onClick={(e) => { handleSubmit(e) }}>
+                                <img src="https://img.icons8.com/avantgarde/344/experimental-search-avantgarde.png" />
+                            </button>
+                        </form>
+                    </div>
+                    <div className={dark ? "card" : "card cardDark"}>
+                        <div className="icon-arrange">
+                            <div className={`${ic !== 'Clear' ? "temperature" : ""}`}><img src={icon} /></div>
+                            <div className="icon--number">
+                                <div className="city">
+                                    <h3>{data.name}, {data.sys.country}</h3>
+                                    <h6 className="date">{dateBuilder(new Date())}</h6>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="temp">
-                        <p className="bold">{parseInt(data.main.temp)}</p> &nbsp;&nbsp;
-                        <div className="celcius">
-                            <h4>&#176;C</h4>
+                        <div className="temp">
+                            <p className={dark ? "bold" : "bold gold"}>{parseInt(data.main.temp)}</p> &nbsp;
+                            <div className="celcius">
+                                <h4>&#176;C</h4>
+                            </div>
                         </div>
-                    </div>
-                    <h4 className="desc">{data.weather[0].description}</h4>
-                    <div className="bottom">
-                        <div className="bottom--details">
-                            <div className="icon--bottom"><p><img src="https://cdn-icons-png.flaticon.com/128/709/709612.png" />&nbsp; Visibility &nbsp;<span>{parseInt(data.visibility / 1000)}km </span></p></div>
-                            <p><img src="https://cdn-icons-png.flaticon.com/128/4158/4158502.png" />&nbsp; Feels Like &nbsp;<span>{parseInt(data.main.feels_like)}</span>&#176;C</p>
+                        <h4 className="desc">{data.weather[0].description}</h4>
+                        <div className="bottom">
+                            <div className={dark ? "bottom--details" : "bottom--details"}>
+                                <div className="icon--bottom"><p><img src="https://cdn-icons-png.flaticon.com/128/709/709612.png" />&nbsp;&nbsp;&nbsp; Visibility &nbsp;<span>{parseInt(data.visibility / 1000)}km </span></p></div>
+                                <p><img src="https://cdn-icons-png.flaticon.com/128/4158/4158502.png" />&nbsp;&nbsp;&nbsp; Feels Like &nbsp;<span>{parseInt(data.main.feels_like)}&#176;C</span></p>
+                            </div>
+                            &nbsp;&nbsp;<div className={dark ? "bottom--details" : "bottom--details"}>
+                                <p><img src="https://img.icons8.com/ios/344/humidity.png" />&nbsp;&nbsp;&nbsp; Humidity &nbsp;<span>{data.main.humidity}%</span></p>
+                                <p><img src="https://static.thenounproject.com/png/927231-200.png" />&nbsp;&nbsp;&nbsp; Wind Speed &nbsp;<span>{data.wind.speed}m/s</span></p>
+                            </div>
                         </div>
-                        &nbsp;&nbsp;<div className="bottom--details side">
-                            <p><img src="https://img.icons8.com/ios/344/humidity.png" />&nbsp; Humidity &nbsp;<span>{data.main.humidity}% </span></p>
-                            <p><img src="https://static.thenounproject.com/png/927231-200.png" />&nbsp; Wind Speed &nbsp;<span>{data.wind.speed}</span>m/s</p>
-                        </div>
+
                     </div>
 
                 </div>
-
+                <div className="mausam"><h1>{windowSize.innerHeight < 534 ? "" : "mawesome"}</h1></div>
             </div>
-            <div className="mausam"><h1>{windowSize.innerHeight < 534 ? "" : "mawesome"}</h1></div>
         </>
     )
 }
