@@ -1,22 +1,58 @@
 body {
-    display: flex;
-    justify-content: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: linear-gradient(rgb(53, 85, 117), rgba(206, 130, 141));
+    background-image: linear-gradient(rgb(72, 135, 191), rgb(193, 69, 88), rgb(153, 74, 153));
     background-repeat: no-repeat;
     min-height: 100vh;
     -webkit-user-select: none;
     color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    background: linear-gradient(rgb(56, 95, 129), rgb(139, 51, 63), rgb(103, 48, 103))
+}
+
+.dark {
+    background-repeat: no-repeat;
+    background-image: url("https://cdn-icons.flaticon.com/png/512/4817/premium/4817680.png?token=exp=1660148714~hmac=2c9272f1b68eb76656285b326cae206b");
+    background-size: cover;
+    opacity: 0.84;
+}
+
+.white {
+    background-repeat: no-repeat;
+    background-image: url("https://cdn-icons.flaticon.com/png/512/3258/premium/3258116.png?token=exp=1660148414~hmac=d3fdbbcca9a5c61993df79865a8c7240");
+    background-size: cover;
+}
+
+.darkMode {
+    height: 2rem;
+    width: 2rem;
+    transform: translate(calc(100vw / 2), 1em);
+}
+
+.every {
+    height: 100vh;
+    width: 100vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-user-select: none;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .mausam {
-    font-size: 0.35em;
-    color: rgb(75, 35, 75);
+    font-size: 0.55em;
+    color: rgb(43, 3, 43);
     position: absolute;
-    bottom: 0rem;
+    font-family: cursive;
+    bottom: 0.3rem;
     text-transform: capitalize;
-    right: 0.5rem;
+    right: 0.9rem;
 }
+
 
 :root {
     --color1: purple;
@@ -85,6 +121,10 @@ img {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.gold {
+    color: rgb(254, 254, 0);
+}
+
 
 .icon--number {
     display: flex;
@@ -94,12 +134,16 @@ img {
 }
 
 .card {
-    background-color: rgba(0, 0, 0, 0.147);
+    background-color: rgba(0, 0, 0, 0.103);
     padding: 2em;
     display: flex;
-    box-shadow: 0.5rem 0.5rem 3.2rem 0.5rem rgba(87, 54, 87, 0.501);
+    box-shadow: 0.5rem 0.5rem 3.2rem 0.5rem rgba(108, 60, 108, 0.501);
     flex-direction: column;
     border-radius: 1em;
+}
+
+.cardDark {
+    background-color: rgba(255, 255, 255, 0.125);
 }
 
 img {
@@ -153,18 +197,18 @@ img {
 }
 
 
-.input {
+input {
     overflow: hidden;
     font-size: 1rem;
     width: 10rem;
-    background-color: rgba(0, 0, 0, 0.147);
+    background-color: rgba(0, 0, 0, 0.148);
     border-radius: 1rem;
     border: none;
     padding: 0.5rem 3rem;
 }
 
 .city {
-    margin-right: 0.2rem;
+    margin-right: 1rem;
 }
 
 .load {
@@ -260,20 +304,26 @@ button img:active {
     display: flex;
     flex-direction: column;
     font-size: 0.5em;
-    opacity: 0.48;
     font-family: sans-serif;
     font-weight: 600;
 }
 
-p {
+
+.bottom--details p {
     margin-top: 0.5rem;
+    opacity: 0.8;
 }
 
 .bottom--details p img {
-    height: 0.8rem;
-    width: 0.8rem;
-    opacity: 0.7;
-    transform: translateY(0.3rem);
+    height: 1rem;
+    width: 1rem;
+    opacity: 0.65;
+    transform: translateY(0.35rem);
+}
+
+.bottom--details p span {
+    color: rgb(167, 218, 240);
+    opacity: 1;
 }
 
 
