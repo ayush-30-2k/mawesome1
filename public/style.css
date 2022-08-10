@@ -15,14 +15,14 @@ a {
 
 .dark {
     background-repeat: no-repeat;
-    background-image: url("https://cdn-icons.flaticon.com/png/512/4817/premium/4817680.png?token=exp=1660148714~hmac=2c9272f1b68eb76656285b326cae206b");
+    background-image: url("https://img.icons8.com/sf-regular-filled/2x/clouds.png");
     background-size: cover;
     opacity: 0.84;
 }
 
 .white {
     background-repeat: no-repeat;
-    background-image: url("https://cdn-icons.flaticon.com/png/512/3258/premium/3258116.png?token=exp=1660148414~hmac=d3fdbbcca9a5c61993df79865a8c7240");
+    background-image: url("https://img.icons8.com/color-glass/344/clouds.png");
     background-size: cover;
 }
 
