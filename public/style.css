@@ -22,7 +22,7 @@ a {
 
 .white {
     background-repeat: no-repeat;
-    background-image: url("https://img.icons8.com/color-glass/344/clouds.png");
+    background-image: url("https://cdn-icons-png.flaticon.com/128/4503/4503018.png");
     background-size: cover;
 }
 
@@ -243,6 +243,10 @@ input {
     }
 }
 
+input {
+    color: white;
+}
+
 button {
     border: none;
     background: transparent;
@@ -257,8 +261,9 @@ button {
 }
 
 button img {
-    height: 1.9rem;
-    width: 1.9rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    transform: translateY(0.2rem);
 }
 
 
