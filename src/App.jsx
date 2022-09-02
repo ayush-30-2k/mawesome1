@@ -1,5 +1,5 @@
-import React from "react"
-import axios from "axios"
+import React from "react";
+import axios from "axios";
 
 
 export default function App() {
@@ -62,7 +62,7 @@ export default function App() {
         axios.get(url).then(res => {
             setTimeout(() => {
                 setData(res.data);
-            }, 1000);
+            }, 10);
         }).catch(err => {
             setErr(err);
         });
@@ -128,6 +128,9 @@ export default function App() {
         case 'Rain':
             icon = "https://img.icons8.com/color/344/rain--v1.png";
             break;
+        case 'Dust':
+            icon = "https://cdn-icons-png.flaticon.com/128/3071/3071002.png";
+            break;
         case 'Drizzle':
             icon = "https://img.icons8.com/external-tulpahn-flat-tulpahn/344/external-drizzle-weather-tulpahn-flat-tulpahn-1.png";
             break;
@@ -140,11 +143,13 @@ export default function App() {
         case 'Mist':
             icon = "https://cdn-icons-png.flaticon.com/512/3313/3313998.png";
             break;
+        default:
+            icon = "https://cdn-icons-png.flaticon.com/128/869/869869.png";
+            break;
     }
 
     function darkMode() {
         setDarkmode(prev => prev = !prev);
-        console.log(dark);
     }
 
 
@@ -163,13 +168,13 @@ export default function App() {
                         <form>
                             <input type="text" className={dark ? "" : "cardDark"} onChange={(e) => { handleClick(e) }} placeholder="Search City or Country" />
                             <button onClick={(e) => { handleSubmit(e) }}>
-                                <img src="https://img.icons8.com/avantgarde/344/experimental-search-avantgarde.png" />
+                                <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="https://cdn-icons-png.flaticon.com/512/2989/2989907.png" />
                             </button>
                         </form>
                     </div>
                     <div className={dark ? "card" : "card cardDark"}>
                         <div className="icon-arrange">
-                            <div className={`${ic !== 'Clear' ? "temperature" : ""}`}><img src={icon} /></div>
+                            <div className={`${ic !== 'Clear' ? "temperature" : ""}`}><img src={icon} alt="https://cdn-icons-png.flaticon.com/128/1163/1163661.png" /></div>
                             <div className="icon--number">
                                 <div className="city">
                                     <h3>{data.name}, {data.sys.country}</h3>
@@ -186,12 +191,12 @@ export default function App() {
                         <h4 className="desc">{data.weather[0].description}</h4>
                         <div className="bottom">
                             <div className={dark ? "bottom--details" : "bottom--details"}>
-                                <div className="icon--bottom"><p><img src="https://cdn-icons-png.flaticon.com/128/709/709612.png" />&nbsp;&nbsp;&nbsp; Visibility &nbsp;<span>{parseInt(data.visibility / 1000)}km </span></p></div>
-                                <p><img src="https://cdn-icons-png.flaticon.com/128/4158/4158502.png" />&nbsp;&nbsp;&nbsp; Feels Like &nbsp;<span>{parseInt(data.main.feels_like)}&#176;C</span></p>
+                                <div className="icon--bottom"><p><img src="https://cdn-icons-png.flaticon.com/128/709/709612.png" alt="avatar" />&nbsp;&nbsp;&nbsp; Visibility &nbsp;<span>{parseInt(data.visibility / 1000)}km </span></p></div>
+                                <p><img src="https://cdn-icons-png.flaticon.com/128/4158/4158502.png" alt="avatar" />&nbsp;&nbsp;&nbsp; Feels Like &nbsp;<span>{parseInt(data.main.feels_like)}&#176;C</span></p>
                             </div>
                             &nbsp;&nbsp;<div className={dark ? "bottom--details" : "bottom--details"}>
-                                <p><img src="https://img.icons8.com/ios/344/humidity.png" />&nbsp;&nbsp;&nbsp; Humidity &nbsp;<span>{data.main.humidity}%</span></p>
-                                <p><img src="https://static.thenounproject.com/png/927231-200.png" />&nbsp;&nbsp;&nbsp; Wind Speed &nbsp;<span>{data.wind.speed}m/s</span></p>
+                                <p><img src="https://img.icons8.com/ios/344/humidity.png" alt="avatar" />&nbsp;&nbsp;&nbsp; Humidity &nbsp;<span>{data.main.humidity}%</span></p>
+                                <p><img src="https://static.thenounproject.com/png/927231-200.png" alt="avatar" />&nbsp;&nbsp;&nbsp; Wind Speed &nbsp;<span>{data.wind.speed}m/s</span></p>
                             </div>
                         </div>
 
