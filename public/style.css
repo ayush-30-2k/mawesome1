@@ -269,6 +269,7 @@ button {
     border: none;
     background: transparent;
     position: absolute;
+    cursor: pointer;
     transform: translateX(-2.5rem);
 }
 
