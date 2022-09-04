@@ -109,6 +109,7 @@ export default function App() {
         )
     }
 
+    const def = "https://cdn-icons-png.flaticon.com/128/1163/1163661.png";
 
     let icon;
 
@@ -144,7 +145,7 @@ export default function App() {
             icon = "https://cdn-icons-png.flaticon.com/512/3313/3313998.png";
             break;
         default:
-            icon = "https://cdn-icons-png.flaticon.com/128/869/869869.png";
+            icon = { def };
             break;
     }
 
@@ -152,15 +153,9 @@ export default function App() {
         setDarkmode(prev => prev = !prev);
     }
 
-
-
-    const style = {
-        background: !dark ? "linear-gradient(rgb(23, 1, 87), rgba(106, 12, 91))" : ""
-    }
-
     return (
         <>
-            <div className="every" style={style}>
+            <div className={`every ${!dark ? "dark--Mode" : ""}`}>
                 <button onClick={darkMode}><div className={dark ? "darkMode dark" : "darkMode white"}></div></button>
                 <div className="all">
                     {errMes && <div className="err shake">{`${errMes.response.data.message}`}</div>}
@@ -174,7 +169,7 @@ export default function App() {
                     </div>
                     <div className={dark ? "card" : "card cardDark"}>
                         <div className="icon-arrange">
-                            <div className={`${ic !== 'Clear' ? "temperature" : ""}`}><img src={icon} alt="https://cdn-icons-png.flaticon.com/128/1163/1163661.png" /></div>
+                            <div className={`${ic !== 'Clear' ? "temperature" : ""}`}><img src={icon} alt={def} /></div>
                             <div className="icon--number">
                                 <div className="city">
                                     <h3>{data.name}, {data.sys.country}</h3>
@@ -194,7 +189,7 @@ export default function App() {
                                 <div className="icon--bottom"><p><img src="https://cdn-icons-png.flaticon.com/128/709/709612.png" alt="avatar" />&nbsp;&nbsp;&nbsp; Visibility &nbsp;<span>{parseInt(data.visibility / 1000)}km </span></p></div>
                                 <p><img src="https://cdn-icons-png.flaticon.com/128/4158/4158502.png" alt="avatar" />&nbsp;&nbsp;&nbsp; Feels Like &nbsp;<span>{parseInt(data.main.feels_like)}&#176;C</span></p>
                             </div>
-                            &nbsp;&nbsp;<div className={dark ? "bottom--details" : "bottom--details"}>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div className={dark ? "bottom--details" : "bottom--details"}>
                                 <p><img src="https://img.icons8.com/ios/344/humidity.png" alt="avatar" />&nbsp;&nbsp;&nbsp; Humidity &nbsp;<span>{data.main.humidity}%</span></p>
                                 <p><img src="https://static.thenounproject.com/png/927231-200.png" alt="avatar" />&nbsp;&nbsp;&nbsp; Wind Speed &nbsp;<span>{data.wind.speed}m/s</span></p>
                             </div>
@@ -203,7 +198,7 @@ export default function App() {
                     </div>
 
                 </div>
-                <div className="mausam"><h1>{windowSize.innerHeight < 534 ? "" : "mawesome"}</h1></div>
+                <div className="mausam"><h1 className={`${!dark ? "white-color" : ""}`}>{windowSize.innerHeight < 534 ? "" : "mawesome"}</h1></div>
             </div>
         </>
     )
