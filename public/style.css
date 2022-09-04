@@ -2,6 +2,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-image: linear-gradient(rgb(72, 135, 191), rgb(193, 69, 88), rgb(153, 74, 153));
     background-repeat: no-repeat;
+    transition: 0.2s ease-in-out;
     min-height: 100vh;
     -webkit-user-select: none;
     color: whitesmoke;
@@ -9,8 +10,8 @@ body {
     justify-content: center;
 }
 
-a {
-    background: linear-gradient(rgb(56, 95, 129), rgb(139, 51, 63), rgb(103, 48, 103))
+html {
+    overflow-y: hidden;
 }
 
 .dark {
@@ -18,18 +19,36 @@ a {
     background-image: url("https://img.icons8.com/sf-regular-filled/2x/clouds.png");
     background-size: cover;
     opacity: 0.84;
+    transition: 0.2s ease-in-out;
 }
 
 .white {
     background-repeat: no-repeat;
+    transition: 0.2s ease-in-out;
     background-image: url("https://cdn-icons-png.flaticon.com/128/4503/4503018.png");
     background-size: cover;
+}
+
+@media (max-width: 340px) {
+    .card {
+        font-size: xx-small;
+    }
 }
 
 .darkMode {
     height: 2rem;
     width: 2rem;
     transform: translate(calc(100vw / 2), 1em);
+}
+
+.white-color {
+    color: aliceblue;
+    transition: 0.1s ease-in-out;
+}
+
+
+.dark--Mode {
+    background: linear-gradient(rgb(23, 1, 87), rgba(106, 12, 91));
 }
 
 .every {
@@ -48,7 +67,7 @@ a {
     color: rgb(43, 3, 43);
     position: absolute;
     font-family: cursive;
-    bottom: 0.3rem;
+    bottom: 0.2rem;
     text-transform: capitalize;
     right: 0.9rem;
 }
@@ -92,7 +111,7 @@ img {
 .bottom {
     display: flex;
     justify-content: space-between;
-    transform: translateY(0.8rem);
+    align-items: center;
 }
 
 .temp {
@@ -108,8 +127,6 @@ img {
     display: flex;
     align-items: center;
 }
-
-
 
 .icon-arrange {
     display: flex;
@@ -134,15 +151,16 @@ img {
 }
 
 .card {
-    background-color: rgba(0, 0, 0, 0.103);
+    background-color: rgba(0, 0, 0, 0.146);
     padding: 2em;
     display: flex;
-    box-shadow: 0.5rem 0.5rem 3.2rem 0.5rem rgba(108, 60, 108, 0.501);
+    box-shadow: 0.5rem 0.5rem 3.2rem 0.5rem rgba(83, 41, 83, 0.564);
     flex-direction: column;
     border-radius: 1em;
 }
 
 .cardDark {
+    box-shadow: 0.5rem 0.5rem 3.2rem 0.5rem rgba(122, 74, 122, 0.564);
     background-color: rgba(255, 255, 255, 0.125);
 }
 
@@ -263,6 +281,8 @@ button {
 button img {
     height: 1.5rem;
     width: 1.5rem;
+    opacity: 0.65;
+    z-index: 10;
     transform: translateY(0.2rem);
 }
 
@@ -315,22 +335,22 @@ button img:active {
 
 
 .bottom--details p {
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     opacity: 0.8;
+    display: flex;
+    align-items: center;
 }
 
 .bottom--details p img {
     height: 1rem;
     width: 1rem;
-    opacity: 0.65;
-    transform: translateY(0.35rem);
+    opacity: 0.7;
 }
 
 .bottom--details p span {
     color: rgb(167, 218, 240);
     opacity: 1;
 }
-
 
 
 .card img {
