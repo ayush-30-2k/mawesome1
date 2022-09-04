@@ -5,7 +5,7 @@ import axios from "axios";
 export default function App() {
 
     const [data, setData] = React.useState(null);
-    const [location, setLocation] = React.useState('delhi');
+    const [location, setLocation] = React.useState('Delhi');
     const [input, setInput] = React.useState('');
     const [errMes, setErr] = React.useState('');
     const [shake, setShake] = React.useState(false);
@@ -25,10 +25,7 @@ export default function App() {
         return `${day}, ${date} ${month} ${year}`
     }
 
-
-
-
-    const handleClick = (e) => {
+const handleClick = (e) => {
         setInput(e.target.value);
     }
 
@@ -155,7 +152,7 @@ export default function App() {
 
     return (
         <>
-            <div className={`every ${!dark ? "dark--Mode" : ""}`}>
+            <div className={`every ${!dark ? "dark--Mode" : "white--Mode"}`}>
                 <button onClick={darkMode}><div className={dark ? "darkMode dark" : "darkMode white"}></div></button>
                 <div className="all">
                     {errMes && <div className="err shake">{`${errMes.response.data.message}`}</div>}
