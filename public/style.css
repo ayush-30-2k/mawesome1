@@ -35,6 +35,26 @@ html {
     }
 }
 
+@media (max-width: 680px) {
+    button {
+        border: none;
+        background: transparent;
+        position: absolute;
+        cursor: auto;
+        transform: translateX(-2.5rem);
+    }
+}
+
+@media (min-width: 680px) {
+    button {
+        border: none;
+        background: transparent;
+        position: absolute;
+        cursor: pointer;
+        transform: translateX(-2.5rem);
+    }
+}
+
 .darkMode {
     height: 2rem;
     width: 2rem;
@@ -48,7 +68,31 @@ html {
 
 
 .dark--Mode {
-    background: linear-gradient(rgb(23, 1, 87), rgba(106, 12, 91));
+    animation: change 1s ease-out;
+    background-image: linear-gradient(rgb(23, 1, 87), rgba(106, 12, 91));
+}
+
+@keyframes change {
+    25% {
+        background-image: linear-gradient(rgb(65, 119, 167), rgb(165, 61, 76), rgb(135, 67, 135));
+    }
+
+    50% {
+        background-image: linear-gradient(rgb(34, 66, 93), rgb(98, 36, 45), rgb(90, 44, 90));
+    }
+
+    75% {
+        background-image: linear-gradient(rgb(42, 19, 105), rgb(145, 48, 129));
+    }
+
+    100% {
+        background-image: linear-gradient(rgb(23, 1, 87), rgba(106, 12, 91));
+    }
+}
+
+.white--Mode {
+    animation: change2 1s ease-in-out;
+    background-image: linear-gradient(rgb(72, 135, 191), rgb(193, 69, 88), rgb(153, 74, 153));
 }
 
 .every {
@@ -62,6 +106,16 @@ html {
     align-items: center;
 }
 
+@keyframes change2 {
+    50% {
+        background-image: linear-gradient(rgb(109, 187, 255), rgb(255, 112, 134), rgb(255, 129, 255));
+    }
+
+    100% {
+        background-image: linear-gradient(rgb(72, 135, 191), rgb(193, 69, 88), rgb(153, 74, 153));
+    }
+}
+
 .mausam {
     font-size: 0.55em;
     color: rgb(43, 3, 43);
@@ -71,7 +125,6 @@ html {
     text-transform: capitalize;
     right: 0.9rem;
 }
-
 
 :root {
     --color1: purple;
@@ -263,14 +316,6 @@ input {
 
 input {
     color: white;
-}
-
-button {
-    border: none;
-    background: transparent;
-    position: absolute;
-    cursor: pointer;
-    transform: translateX(-2.5rem);
 }
 
 ::placeholder {
