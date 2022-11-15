@@ -25,7 +25,10 @@ export default function App() {
         return `${day}, ${date} ${month} ${year}`
     }
 
-const handleClick = (e) => {
+
+
+
+    const handleClick = (e) => {
         setInput(e.target.value);
     }
 
@@ -59,7 +62,7 @@ const handleClick = (e) => {
         axios.get(url).then(res => {
             setTimeout(() => {
                 setData(res.data);
-            }, 10);
+            }, 1200);
         }).catch(err => {
             setErr(err);
         });
@@ -115,31 +118,31 @@ const handleClick = (e) => {
 
     switch (data.weather[0].main) {
         case 'Clouds':
-            icon = "https://cdn-icons-png.flaticon.com/512/414/414927.png";
+            icon = "https://drive.google.com/uc?export=view&id=1ix0h2ZhHC9G5Y98RxMt6TyAzrf_E4g4_";
             break;
         case 'Haze':
-            icon = "https://cdn-icons-png.flaticon.com/512/1197/1197102.png";
+            icon = "https://drive.google.com/uc?export=view&id=1bYHAo1SI1WWql7ss2gnF6cOs8GCvsi6P";
             break;
         case 'Clear':
-            icon = "https://cdn-icons-png.flaticon.com/512/869/869869.png";
+            icon = "https://drive.google.com/uc?export=view&id=1vdovnciDNQxyg7gGWpwEWeLjCzQO-5Wg";
             break;
         case 'Rain':
-            icon = "https://img.icons8.com/color/344/rain--v1.png";
+            icon = "https://drive.google.com/uc?export=view&id=1bYHAo1SI1WWql7ss2gnF6cOs8GCvsi6P";
             break;
         case 'Dust':
-            icon = "https://cdn-icons-png.flaticon.com/128/3071/3071002.png";
+            icon = "https://drive.google.com/uc?export=view&id=1ADyuShkXsCkZGGT5-vWLaPEqDDpe6J82";
             break;
         case 'Drizzle':
-            icon = "https://img.icons8.com/external-tulpahn-flat-tulpahn/344/external-drizzle-weather-tulpahn-flat-tulpahn-1.png";
+            icon = "https://drive.google.com/uc?export=view&id=1TnZvZOVpk3ulR9ebvmnRa78xGbbDPI7M";
             break;
         case 'Snow':
-            icon = "https://img.icons8.com/arcade/344/experimental-snow-arcade.png";
+            icon = "https://drive.google.com/uc?export=view&id=1D3-AylihohZ6K6Hyy0Z3Jrf-4j0p6Xk1";
             break;
         case 'Thunderstorm':
-            icon = "https://cdn-icons-png.flaticon.com/512/3445/3445722.png";
+            icon = "https://drive.google.com/uc?export=view&id=1A7cMCBzogKkQvU2za5PoFPXLQp4TCl4U";
             break;
         case 'Mist':
-            icon = "https://cdn-icons-png.flaticon.com/512/3313/3313998.png";
+            icon = "https://drive.google.com/uc?export=view&id=1BR7hYZnI5uoq_1adL9totvuN-zL3uN_h";
             break;
         default:
             icon = { def };
