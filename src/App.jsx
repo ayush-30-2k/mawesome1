@@ -145,7 +145,7 @@ export default function App() {
             icon = "https://drive.google.com/uc?export=view&id=1BR7hYZnI5uoq_1adL9totvuN-zL3uN_h";
             break;
         default:
-            icon = "https://drive.google.com/uc?export=view&id=1BR7hYZnI5uoq_1adL9totvuN-zL3uN_h;
+            icon = "https://drive.google.com/uc?export=view&id=1BR7hYZnI5uoq_1adL9totvuN-zL3uN_h";
             break;
     }
 
